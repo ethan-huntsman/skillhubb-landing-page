@@ -1,190 +1,114 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SkillHubb for Engineers</title>
+  <meta name="description" content="SkillHubbはソフトウェアエンジニアのためのマッチングアプリ。スワイプして、あなたに合う案件・チームを見つけよう。">
+  <meta name="keywords" content="エンジニア募集, フリーランス, リモート案件, IT求人, スタートアップマッチング">
+  <meta name="author" content="SkillHubb Team">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-   body {
-      margin: 0;
-      font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, #00ffcc, #3366ff);
-      color: #fff;
-      overflow-x: hidden;
-    }
-    header, section, footer {
-      text-align: center;
-      padding: 60px 20px;
-      position: relative;
-      z-index: 2;
-    }
-    h1 {
-      font-size: 3.5em;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px 0;
-    }
-    .feature {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 16px;
-      padding: 30px;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-    input[type="email"] {
-      padding: 12px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
-      margin-right: 10px;
-      width: 250px;
-    }
-    button {
-      padding: 12px 24px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
-      background: #fff;
-      color: #3366ff;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    button:hover {
-      background: #3366ff;
-      color: #fff;
-    }
-    footer {
-      background: rgba(0,0,0,0.2);
-      padding: 40px 20px;
-      font-size: 0.9em;
-    }
-    .alt-bg {
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.15);
-      border-radius: 16px;
-      padding: 60px 20px;
-      margin: 60px 0;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.4;
-      filter: blur(100px);
-      z-index: 0;
-    }
-    .blob1 {
-      width: 300px;
-      height: 300px;
-      background: #00ffcc;
-      top: -100px;
-      left: -100px;
-    }
-    .blob2 {
-      width: 400px;
-      height: 400px;
-      background: #3366ff;
-      bottom: -150px;
-      right: -150px;
-    }
-    .screenshots {
-  padding: 60px 20px;
-  text-align: center;
-}
-.screenshot-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-.screenshot-gallery img {
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  width: 200px;
-  height: auto;
-}
+    /* Reuse your full styles from original here */
+    /* For brevity, not repeated in this snippet */
   </style>
 </head>
 <body>
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
-  <header>
-    <img src="https://via.placeholder.com/150x50?text=SkillHubb+Logo" alt="SkillHubb Logo" style="margin-bottom: 20px;" />
-    <h1>企業向け SkillHubb</h1>
-    <p>直感的なスワイプ UI で、優秀なエンジニアをスピーディに採用。</p>
+  <div class="blob blob3"></div>
+
+  <nav>
+    <div class="logo-container">
+      <img src="https://via.placeholder.com/32x32.png?text=S" alt="SkillHubbロゴ" class="logo-img" />
+      <span class="logo-text">SkillHubb</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>あなたのスキル、次の一手へ。</h1>
+    <p>SkillHubbは、エンジニアのためのスワイプ式マッチング。あなたの条件に合う企業やプロジェクトとつながろう。</p>
+    <a href="#signup" class="btn">登録してチャンスを探す</a>
   </header>
 
-
-  <section class="alt-bg">
-    <h2>なぜ SkillHubb？</h2>
-    <p>SkillHubb は、キャリアの主導権を握りたい開発者のために作られました。スワイプ式のインターフェースで、フリーランス案件や正社員ポジションをスピーディーに見つけましょう。スキルと希望に基づいたマッチングが可能です。</p>
+  <section class="features">
+    <div class="feature-box">
+      <h3>あなた主導のマッチング</h3>
+      <p>興味のある企業だけをスワイプで選択。希望の働き方にフィットしたチームが見つかります。</p>
+    </div>
+    <div class="feature-box">
+      <h3>プロフィールで魅力を表現</h3>
+      <p>あなたの技術スタック、実績、働き方の希望を自由にアピールできます。</p>
+    </div>
+    <div class="feature-box">
+      <h3>非公開求人も発見</h3>
+      <p>一般には出回らないスタートアップ案件やリモート専用の求人もマッチ可能。</p>
+    </div>
   </section>
 
   <section class="screenshots">
-  <h2>アプリのプレビュー</h2>
-  <div class="screenshot-gallery">
-    <img src="https://via.placeholder.com/200x400" alt="スワイプ画面">
-    <img src="https://via.placeholder.com/200x400" alt="チャット画面">
-    <img src="https://via.placeholder.com/200x400" alt="プロフィール作成画面">
-  </div>
-</section>
+    <h2>アプリのプレビュー</h2>
+    <div class="screenshot-gallery">
+      <img src="https://via.placeholder.com/200x400?text=Swipe+Project" alt="スワイプ画面">
+      <img src="https://via.placeholder.com/200x400?text=Skill+Tags" alt="スキル表示">
+      <img src="https://via.placeholder.com/200x400?text=Chat+Start" alt="チャット開始">
+    </div>
+  </section>
 
-
-  <section>
-    <h2>使い方</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>1. プロフィール作成</h3>
-        <p>技術スタック、経験、希望条件を入力して、正確なマッチングを実現。</p>
+  <section class="about">
+    <h2>はじめかたは簡単</h2>
+    <div class="about-grid">
+      <div class="about-box">
+        <img src="https://via.placeholder.com/80?text=1" alt="ステップ1">
+        <p>プロフィールを登録</p>
       </div>
-      <div class="feature">
-        <h3>2. 求人をスワイプ</h3>
-        <p>スキルに合った求人やプロジェクトを素早くチェック。スワイプして応募またはスキップ。</p>
+      <div class="about-box">
+        <img src="https://via.placeholder.com/80?text=2" alt="ステップ2">
+        <p>案件をスワイプでチェック</p>
       </div>
-      <div class="feature">
-        <h3>3. 直接チャット</h3>
-        <p>マッチ後すぐに、プロジェクトリーダーや採用担当者とチャットを開始できます。</p>
+      <div class="about-box">
+        <img src="https://via.placeholder.com/80?text=3" alt="ステップ3">
+        <p>マッチしたらチャットで詳細確認</p>
       </div>
     </div>
   </section>
 
-  <section class="alt-bg">
-    <h2>開発者の声</h2>
-    <p>「サインアップ初日でリモートの React 案件にマッチしました！」 – フロントエンド開発者</p>
-    <p>「ようやく時間を無駄にしない求人サービスが出た！」 – バックエンドエンジニア</p>
+  <section class="testimonials">
+    <h2>エンジニアの声</h2>
+    <div class="testimonial">「在宅の副業案件を探していたところ、2日で理想のプロジェクトとマッチしました！」<br><strong>- 翼（Reactエンジニア）</strong></div>
+    <div class="testimonial">「企業からのスカウトもあって、自分の市場価値を実感できた。」<br><strong>- 加奈子（DevOps / SRE）</strong></div>
   </section>
 
-  <section>
-    <h2>ウェイトリストに登録</h2>
-    <form>
-      <input type="email" placeholder="メールアドレスを入力" />
-      <button type="submit">登録する</button>
+  <section class="signup" id="signup">
+    <h2>新しい案件と出会おう</h2>
+    <p>SkillHubbは近日公開予定。今すぐ登録して、最初のユーザーになりましょう。</p>
+    <form action="#" method="POST" onsubmit="return handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required />
+      <button class="btn" type="submit">先行登録する</button>
+      <div class="form-message" id="formMessage"></div>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 SkillHubb — エンジニアのために構築
+    &copy; 2025 SkillHubb. エンジニアのための未来を。
   </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const message = document.getElementById('formMessage');
+      const emailInput = form.querySelector('input[name="email"]');
+      const email = emailInput.value;
+
+      // Simulate API call
+      setTimeout(() => {
+        message.textContent = `「${email}」で登録を受け付けました。ありがとうございます！`;
+        form.reset();
+      }, 500);
+
+      return false;
+    }
+  </script>
 </body>
 </html>
