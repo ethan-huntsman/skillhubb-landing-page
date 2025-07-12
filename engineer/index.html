@@ -15,9 +15,6 @@
       overflow-x: hidden;
     }
     header, section, footer {
-      background: var(--light-blue);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
       text-align: center;
       padding: 60px 20px;
       position: relative;
@@ -28,10 +25,6 @@
       margin-bottom: 10px;
     }
     h2 {
-      background: var(--light-blue);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
       font-size: 2.5em;
       margin-bottom: 20px;
     }
@@ -86,7 +79,12 @@
       padding: 40px 20px;
       font-size: 0.9em;
     }
-    /* Decorative background blobs */
+    .alt-bg {
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: 16px;
+      padding: 60px 20px;
+      margin: 60px 0;
+    }
     .blob {
       position: absolute;
       border-radius: 50%;
@@ -108,55 +106,82 @@
       bottom: -150px;
       right: -150px;
     }
+    .screenshots {
+  padding: 60px 20px;
+  text-align: center;
+}
+.screenshot-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.screenshot-gallery img {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: auto;
+}
   </style>
 </head>
 <body>
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
   <header>
-    <h1>SkillHubb for Engineers</h1>
-    <p>Job Hunting Re-Imagined — Built for Engineers</p>
+    <h1>SkillHubb エンジニア向け</h1>
+    <p>仕事探しを再発明 — エンジニアのために設計</p>
   </header>
 
-  <section>
-    <h2>Why SkillHubb?</h2>
-    <p>SkillHubb is built for developers who want better control of their careers. Match with freelance gigs or full-time roles using a fast, swipe-based interface — powered by your actual skills and preferences.</p>
+  <section class="alt-bg">
+    <h2>なぜ SkillHubb？</h2>
+    <p>SkillHubb は、キャリアの主導権を握りたい開発者のために作られました。スワイプ式のインターフェースで、フリーランス案件や正社員ポジションをスピーディーに見つけましょう。スキルと希望に基づいたマッチングが可能です。</p>
   </section>
 
+  <section class="screenshots">
+  <h2>アプリのプレビュー</h2>
+  <div class="screenshot-gallery">
+    <img src="https://via.placeholder.com/200x400" alt="スワイプ画面">
+    <img src="https://via.placeholder.com/200x400" alt="チャット画面">
+    <img src="https://via.placeholder.com/200x400" alt="プロフィール作成画面">
+  </div>
+</section>
+
+
   <section>
-    <h2>How It Works</h2>
+    <h2>使い方</h2>
     <div class="features">
       <div class="feature">
-        <h3>1. Build Your Profile</h3>
-        <p>Add your tech stack, experience, and preferences to get matched accurately.</p>
+        <h3>1. プロフィール作成</h3>
+        <p>技術スタック、経験、希望条件を入力して、正確なマッチングを実現。</p>
       </div>
       <div class="feature">
-        <h3>2. Swipe Through Jobs</h3>
-        <p>Quickly review roles or projects that match your skills. Swipe to apply or skip.</p>
+        <h3>2. 求人をスワイプ</h3>
+        <p>スキルに合った求人やプロジェクトを素早くチェック。スワイプして応募またはスキップ。</p>
       </div>
       <div class="feature">
-        <h3>3. Chat Directly</h3>
-        <p>Start chatting instantly with project leads or hiring managers after a match.</p>
+        <h3>3. 直接チャット</h3>
+        <p>マッチ後すぐに、プロジェクトリーダーや採用担当者とチャットを開始できます。</p>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Developer Testimonials</h2>
-    <p>“I matched with a remote React gig within hours of signing up.” – Frontend Developer</p>
-    <p>“Finally a job platform that respects my time.” – Backend Engineer</p>
+  <section class="alt-bg">
+    <h2>開発者の声</h2>
+    <p>「サインアップ初日でリモートの React 案件にマッチしました！」 – フロントエンド開発者</p>
+    <p>「ようやく時間を無駄にしない求人サービスが出た！」 – バックエンドエンジニア</p>
   </section>
 
   <section>
-    <h2>Join the Waitlist</h2>
+    <h2>ウェイトリストに登録</h2>
     <form>
-      <input type="email" placeholder="Your email" />
-      <button type="submit">Sign Up</button>
+      <input type="email" placeholder="メールアドレスを入力" />
+      <button type="submit">登録する</button>
     </form>
   </section>
 
   <footer>
-    &copy; 2025 SkillHubb — Built for Engineers
+    &copy; 2025 SkillHubb — エンジニアのために構築
   </footer>
 </body>
 </html>
