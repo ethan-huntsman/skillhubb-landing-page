@@ -9,8 +9,277 @@
   <meta name="author" content="SkillHubb Team">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Reuse your full styles from original here */
-    /* For brevity, not repeated in this snippet */
+    :root {
+      --blue: #3B82F6;
+      --green: #22C55E;
+      --light-blue: #eff6ff;
+      --light-green: #ecfdf5;
+      --light-bg: #f9f9f9;
+      --text-color: #333;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #3B82F6, #22C55E);
+      background-attachment: fixed;
+      color: var(--text-color);
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      filter: blur(120px);
+      z-index: -1;
+    }
+
+    .blob1 {
+      width: 400px;
+      height: 400px;
+      background: #22C55E;
+      top: -100px;
+      left: -100px;
+    }
+
+    .blob2 {
+      width: 300px;
+      height: 300px;
+      background: #3B82F6;
+      bottom: -100px;
+      right: -100px;
+    }
+
+    .blob3 {
+      width: 200px;
+      height: 200px;
+      background: #10B981;
+      top: 300px;
+      right: 50px;
+    }
+
+    header, section, footer {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 48px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: white;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 80px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .btn {
+      background: white;
+      color: var(--green);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background: var(--light-blue);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      border-left: 5px solid var(--blue);
+    }
+
+    .about {
+      background: var(--light-green);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .testimonials {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .testimonial {
+      font-style: italic;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      border-left: 3px solid var(--green);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--green);
+    }
+
+    .signup {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .signup form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .signup input[type="email"] {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .signup input:focus {
+      border-color: var(--blue);
+      outline: none;
+    }
+
+    .signup .form-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--green);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      padding-top: 20px;
+    }
+
+     .screenshots {
+      background: var(--light-green);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      padding: 60px 20px;
+      max-width: 960px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .screenshots h2 {
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 20px;
+    }
+
+    .screenshot-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+    }
+
+    .screenshot-gallery img {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      scroll-snap-align: start;
+    }
+
+    .screenshot-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .about-box {
+      text-align: center;
+    }
+
+    .about-box img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
