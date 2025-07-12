@@ -14,10 +14,334 @@
   <meta name="twitter:card" content="summary_large_image">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* styles here */
+     :root {
+      --blue: #3B82F6;
+      --green: #22C55E;
+      --light-blue: #eff6ff;
+      --light-green: #ecfdf5;
+      --light-bg: #f9f9f9;
+      --text-color: #333;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #3B82F6, #22C55E);
+      background-attachment: fixed;
+      color: var(--text-color);
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      filter: blur(120px);
+      z-index: -1;
+    }
+
+    .blob1 {
+      width: 400px;
+      height: 400px;
+      background: #22C55E;
+      top: -100px;
+      left: -100px;
+    }
+
+    .blob2 {
+      width: 300px;
+      height: 300px;
+      background: #3B82F6;
+      bottom: -100px;
+      right: -100px;
+    }
+
+    .blob3 {
+      width: 200px;
+      height: 200px;
+      background: #10B981;
+      top: 300px;
+      right: 50px;
+    }
+
+    header, section, footer {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 48px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: white;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 80px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .btn {
+      background: white;
+      color: var(--green);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-box {
+      background: var(--light-blue);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      border-left: 5px solid var(--blue);
+    }
+
+    .about {
+      background: var(--light-green);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .testimonials {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .testimonial {
+      font-style: italic;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      border-left: 3px solid var(--green);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--green);
+    }
+
+    .signup {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .signup form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .signup input[type="email"] {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .signup input:focus {
+      border-color: var(--blue);
+      outline: none;
+    }
+
+    .signup .form-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--green);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      padding-top: 20px;
+    }
+
+     .screenshots {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .screenshots h2 {
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 20px;
+    }
+
+    .screenshot-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .screenshot-gallery img {
+      width: 200px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
-  <!-- content omitted for brevity -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <nav>
+    <div class="logo-container">
+      <img src="https://via.placeholder.com/32x32.png?text=S" alt="SkillHubbロゴ" class="logo-img" />
+      <span class="logo-text">SkillHubb</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>スワイプ。マッチ。コード。</h1>
+    <p>より評判の高い技術者採用の方法を。SkillHubbはソフトウェアエンジニアと企業をマッチさせます。</p>
+    <a href="#signup" class="btn">最新情報を取得</a>
+  </header>
+
+  <section class="features">
+    <div class="feature-box">
+      <h3>速いマッチング</h3>
+      <p>エンジニアと企業の素早いマッチにより、採用スピードを大幅に向上させます。</p>
+    </div>
+    <div class="feature-box">
+      <h3>スマートフィルタ</h3>
+      <p>技術、経験、募集形式などで正確に絞り込めます。</p>
+    </div>
+    <div class="feature-box">
+      <h3>安心のメッセージ</h3>
+      <p>アプリ内チャットで、信頼できるやりとりがスムーズに行えます。</p>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2>アプリのプレビュー</h2>
+    <div class="screenshot-gallery">
+      <img src="https://via.placeholder.com/200x400?text=Profile+Swipe" alt="Profile Swipe">
+      <img src="https://via.placeholder.com/200x400?text=Chat+Screen" alt="Chat Screen">
+      <img src="https://via.placeholder.com/200x400?text=Profile+Creation" alt="Profile Creation">
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>SkillHubbの使い方</h2>
+    <p>Tinderのように、テック採用に特化したマッチングプラットフォームです。エンジニアはスキルを紹介するプロフィールを作成し、企業は募集情報を登録します。お互いにスワイプするとマッチが成立。スパムなし、負担なし。質の高い出会いを実現します。</p>
+  </section>
+
+  <section class="testimonials">
+    <h2>利用者の声</h2>
+    <div class="testimonial">「1週間以内でフリーランスの仕事が決まりました。使いやすさとデザインが優れています。」<br><strong>- アレックス（フルスタック開発者）</strong></div>
+    <div class="testimonial">「これぞ未来型の採用プラットフォームだと思います。無駄なHRフローを排除。」<br><strong>- プリヤ（スタートアップ経営者）</strong></div>
+  </section>
+
+  <section class="signup" id="signup">
+    <h2>最新情報を手に入れよう</h2>
+    <p>SkillHubbは間もなくローンチします。メールアドレスを入力して、情報をいち早くゲットしましょう。</p>
+    <form action="#" method="POST" onsubmit="return handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required />
+      <button class="btn" type="submit">メールリストに登録</button>
+      <div class="form-message" id="formMessage"></div>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 SkillHubb. すべての権利を保有します。
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const message = document.getElementById('formMessage');
+      const emailInput = form.querySelector('input[name="email"]');
+      const email = emailInput.value;
+
+      // Simulate API call
+      setTimeout(() => {
+        message.textContent = `「${email}」で登録を受け付けました。ありがとうございます！`;
+        form.reset();
+      }, 500);
+
+      return false;
+    }
+  </script>
 </body>
 </html>
