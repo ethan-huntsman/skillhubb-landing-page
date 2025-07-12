@@ -260,6 +260,23 @@
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .about-box {
+      text-align: center;
+    }
+
+    .about-box img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -306,7 +323,20 @@
 
   <section class="about">
     <h2>SkillHubbの使い方</h2>
-    <p>Tinderのように、テック採用に特化したマッチングプラットフォームです。エンジニアはスキルを紹介するプロフィールを作成し、企業は募集情報を登録します。お互いにスワイプするとマッチが成立。スパムなし、負担なし。質の高い出会いを実現します。</p>
+    <div class="about-grid">
+      <div class="about-box">
+        <img src="https://via.placeholder.com/80?text=1" alt="ステップ1">
+        <p>エンジニアがプロフィールを作成</p>
+      </div>
+      <div class="about-box">
+        <img src="https://via.placeholder.com/80?text=2" alt="ステップ2">
+        <p>企業が募集情報を登録</p>
+      </div>
+      <div class="about-box">
+        <img src="https://via.placeholder.com/80?text=3" alt="ステップ3">
+        <p>スワイプでマッチして、チャット・採用へ</p>
+      </div>
+    </div>
   </section>
 
   <section class="testimonials">
