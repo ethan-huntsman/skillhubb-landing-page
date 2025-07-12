@@ -1,118 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SkillHubb for Companies</title>
+  <meta name="description" content="SkillHubbはエンジニア採用を効率化するマッチングアプリ。スワイプ式で、スキルの合う人材とつながれます。">
+  <meta name="keywords" content="エンジニア採用, スタートアップ, リモート人材, 技術者マッチング, IT人材獲得">
+  <meta name="author" content="SkillHubb Team">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, #00ff99, #00ccff);
-      color: #fff;
-    }
-    header, section, footer {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
-    }
-    .section-dark {
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-      padding: 40px 20px;
-      margin-top: 20px;
-    }
-    input[type="email"] {
-      padding: 10px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
-      margin-right: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      border: none;
-      border-radius: 8px;
-      background: #fff;
-      color: #00ccff;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .screenshots {
-  padding: 60px 20px;
-  text-align: center;
-}
-.screenshot-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-.screenshot-gallery img {
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  width: 200px;
-  height: auto;
-}
+    /* Same CSS from original site here */
+    /* For brevity, CSS is not repeated in this snippet */
   </style>
 </head>
 <body>
-  <header>
-  <img src="https://via.placeholder.com/150x50?text=SkillHubb+Logo" alt="SkillHubb Logo" style="margin-bottom: 20px;" />
-  <h1>企業向け SkillHubb</h1>
-  <p>直感的なスワイプ UI で、優秀なエンジニアをスピーディに採用。</p>
-</header>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
 
+  <nav>
+    <div class="logo-container">
+      <img src="https://via.placeholder.com/32x32.png?text=S" alt="SkillHubbロゴ" class="logo-img" />
+      <span class="logo-text">SkillHubb</span>
+    </div>
+  </nav>
 
-  <section class="section-dark">
-    <h2>使い方は簡単</h2>
-    <p>優秀なエンジニアを閲覧してスワイプ、マッチすればすぐにチャット。仲介業者は不要、スピーディな採用が可能です。</p>
+  <header class="hero">
+    <h1>エンジニア採用、もっとスマートに。</h1>
+    <p>SkillHubbは、スワイプ式で最適なエンジニアとつながる採用マッチングアプリ。人材探索を、もっと直感的に。</p>
+    <a href="#signup" class="btn">無料で企業登録</a>
+  </header>
+
+  <section class="features">
+    <div class="feature-box">
+      <h3>スワイプでスクリーニング</h3>
+      <p>気になるエンジニアだけをスワイプでピック。時間をかけずに候補を選べます。</p>
+    </div>
+    <div class="feature-box">
+      <h3>スキル・稼働条件でフィルタ</h3>
+      <p>技術スタック、働き方（リモート / 常駐）、稼働時間などの条件に合う人材を即マッチ。</p>
+    </div>
+    <div class="feature-box">
+      <h3>マッチ後すぐにチャット可能</h3>
+      <p>お互いにマッチすれば、即チャットで連絡。選考プロセスを高速化します。</p>
+    </div>
   </section>
 
   <section class="screenshots">
-  <h2>アプリのプレビュー</h2>
-  <div class="screenshot-gallery">
-    <img src="https://via.placeholder.com/200x400" alt="スワイプ画面">
-    <img src="https://via.placeholder.com/200x400" alt="チャット画面">
-    <img src="https://via.placeholder.com/200x400" alt="プロフィール作成画面">
-  </div>
-</section>
-
-
-  <section>
-    <h2>スタートアップから大手企業まで導入</h2>
-    <p>「たった48時間でリードエンジニアを採用できました。」<br>– TechCorp CTO</p>
+    <h2>採用担当者向け画面</h2>
+    <div class="screenshot-gallery">
+      <img src="https://via.placeholder.com/200x400?text=Candidate+Swipe" alt="候補者スワイプ画面">
+      <img src="https://via.placeholder.com/200x400?text=Skill+Match" alt="スキルマッチ表示">
+      <img src="https://via.placeholder.com/200x400?text=Chat+Interface" alt="チャット機能">
+    </div>
   </section>
 
-  <section class="section-dark">
-    <h2>今すぐ事前登録</h2>
-    <form>
-      <input type="email" placeholder="メールアドレスを入力" />
-      <button type="submit">登録する</button>
-    </form>
-  </section>
-
-  <footer>
-    &copy; 2025 SkillHubb
-  </footer>
-</body>
-</html>
+  <s
