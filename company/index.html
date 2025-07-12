@@ -19,34 +19,95 @@
     }
     h1 {
       font-size: 3em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
     }
     section {
       max-width: 800px;
       margin: auto;
     }
+    .section-dark {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 40px 20px;
+      margin-top: 20px;
+    }
+    input[type="email"] {
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+      color: #00ccff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .screenshots {
+  padding: 60px 20px;
+  text-align: center;
+}
+.screenshot-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.screenshot-gallery img {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: auto;
+}
   </style>
 </head>
 <body>
   <header>
-    <h1>SkillHubb for Companies</h1>
-    <p>Hire skilled developers with ease using our intuitive swiping interface.</p>
-  </header>
+  <img src="https://via.placeholder.com/150x50?text=SkillHubb+Logo" alt="SkillHubb Logo" style="margin-bottom: 20px;" />
+  <h1>企業向け SkillHubb</h1>
+  <p>直感的なスワイプ UI で、優秀なエンジニアをスピーディに採用。</p>
+</header>
 
-  <section>
-    <h2>How it Works</h2>
-    <p>Browse top engineers, swipe to connect, and chat instantly — no middlemen, no delays.</p>
+
+  <section class="section-dark">
+    <h2>使い方は簡単</h2>
+    <p>優秀なエンジニアを閲覧してスワイプ、マッチすればすぐにチャット。仲介業者は不要、スピーディな採用が可能です。</p>
   </section>
 
-  <section>
-    <h2>Trusted by Startups & Enterprises</h2>
-    <p>“We hired our lead dev through SkillHubb in 48 hours.” – CTO, TechCorp</p>
-  </section>
+  <section class="screenshots">
+  <h2>アプリのプレビュー</h2>
+  <div class="screenshot-gallery">
+    <img src="https://via.placeholder.com/200x400" alt="スワイプ画面">
+    <img src="https://via.placeholder.com/200x400" alt="チャット画面">
+    <img src="https://via.placeholder.com/200x400" alt="プロフィール作成画面">
+  </div>
+</section>
+
 
   <section>
-    <h2>Get Early Access</h2>
+    <h2>スタートアップから大手企業まで導入</h2>
+    <p>「たった48時間でリードエンジニアを採用できました。」<br>– TechCorp CTO</p>
+  </section>
+
+  <section class="section-dark">
+    <h2>今すぐ事前登録</h2>
     <form>
-      <input type="email" placeholder="Your email" />
-      <button type="submit">Sign Up</button>
+      <input type="email" placeholder="メールアドレスを入力" />
+      <button type="submit">登録する</button>
     </form>
   </section>
 
