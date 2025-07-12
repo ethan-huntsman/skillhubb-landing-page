@@ -7,39 +7,137 @@
   <title>SkillHubb for Engineers</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+   body {
       margin: 0;
       font-family: 'Space Grotesk', sans-serif;
       background: linear-gradient(135deg, #00ffcc, #3366ff);
       color: #fff;
+      overflow-x: hidden;
     }
     header, section, footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
     }
     h1 {
-      font-size: 3em;
+      font-size: 3.5em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
     }
     section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px 0;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    input[type="email"] {
+      padding: 12px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      margin-right: 10px;
+      width: 250px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+      color: #3366ff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    button:hover {
+      background: #3366ff;
+      color: #fff;
+    }
+    footer {
+      background: rgba(0,0,0,0.2);
+      padding: 40px 20px;
+      font-size: 0.9em;
+    }
+    /* Decorative background blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.4;
+      filter: blur(100px);
+      z-index: 0;
+    }
+    .blob1 {
+      width: 300px;
+      height: 300px;
+      background: #00ffcc;
+      top: -100px;
+      left: -100px;
+    }
+    .blob2 {
+      width: 400px;
+      height: 400px;
+      background: #3366ff;
+      bottom: -150px;
+      right: -150px;
     }
   </style>
 </head>
 <body>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
   <header>
     <h1>SkillHubb for Engineers</h1>
-    <p>Discover your next project or career move — fast and intuitively.</p>
+    <p>Job Hunting Re-Imagined — Built for Engineers</p>
   </header>
 
   <section>
     <h2>Why SkillHubb?</h2>
-    <p>Swipe through opportunities, chat directly with hiring teams, and showcase your skills with a custom profile.</p>
+    <p>SkillHubb is built for developers who want better control of their careers. Match with freelance gigs or full-time roles using a fast, swipe-based interface — powered by your actual skills and preferences.</p>
   </section>
 
   <section>
-    <h2>Testimonials</h2>
-    <p>“I matched with a freelance contract on day one!” – Frontend Developer</p>
+    <h2>How It Works</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>1. Build Your Profile</h3>
+        <p>Add your tech stack, experience, and preferences to get matched accurately.</p>
+      </div>
+      <div class="feature">
+        <h3>2. Swipe Through Jobs</h3>
+        <p>Quickly review roles or projects that match your skills. Swipe to apply or skip.</p>
+      </div>
+      <div class="feature">
+        <h3>3. Chat Directly</h3>
+        <p>Start chatting instantly with project leads or hiring managers after a match.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Developer Testimonials</h2>
+    <p>“I matched with a remote React gig within hours of signing up.” – Frontend Developer</p>
+    <p>“Finally a job platform that respects my time.” – Backend Engineer</p>
   </section>
 
   <section>
@@ -51,7 +149,7 @@
   </section>
 
   <footer>
-    &copy; 2025 SkillHubb
+    &copy; 2025 SkillHubb — Built for Engineers
   </footer>
 </body>
 </html>
