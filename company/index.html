@@ -1,327 +1,360 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SkillHubb for Companies</title>
-  <meta name="description" content="SkillHubbはエンジニア採用を効率化するマッチングアプリ。スワイプ式で、スキルの合う人材とつながれます。">
-  <meta name="keywords" content="エンジニア採用, スタートアップ, リモート人材, 技術者マッチング, IT人材獲得">
-  <meta name="author" content="SkillHubb Team">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #3B82F6;
-      --green: #22C55E;
-      --light-blue: #eff6ff;
-      --light-green: #ecfdf5;
-      --light-bg: #f9f9f9;
-      --text-color: #333;
-      --card-bg: #ffffff;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: linear-gradient(135deg, #3B82F6, #22C55E);
-      background-attachment: fixed;
-      color: var(--text-color);
-      line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3 {
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.2;
-      filter: blur(120px);
-      z-index: -1;
-    }
-
-    .blob1 {
-      width: 400px;
-      height: 400px;
-      background: #22C55E;
-      top: -100px;
-      left: -100px;
-    }
-
-    .blob2 {
-      width: 300px;
-      height: 300px;
-      background: #3B82F6;
-      bottom: -100px;
-      right: -100px;
-    }
-
-    .blob3 {
-      width: 200px;
-      height: 200px;
-      background: #10B981;
-      top: 300px;
-      right: 50px;
-    }
-
-    header, section, footer {
-      padding: 60px 20px;
-      max-width: 960px;
-      margin: auto;
-    }
-
-    h1, h2, h3 {
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 48px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: white;
-      position: sticky;
-      top: 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      z-index: 10;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-img {
-      width: 32px;
-      height: 32px;
-    }
-
-    .logo-text {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--blue);
-    }
-
-    .hero {
-      text-align: center;
-      padding-top: 80px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-
-    .btn {
-      background: white;
-      color: var(--green);
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .btn:hover {
-      background: var(--green);
-      color: white;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-box {
-      background: var(--light-blue);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-      border-left: 5px solid var(--blue);
-    }
-
-    .about {
-      background: var(--light-green);
-      border-radius: 12px;
-      padding: 40px;
-      margin-bottom: 40px;
-    }
-
-    .testimonials {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .testimonial {
-      font-style: italic;
-      margin-bottom: 20px;
-      padding-left: 20px;
-      border-left: 3px solid var(--green);
-    }
-
-    .testimonial strong {
-      display: block;
-      margin-top: 10px;
-      color: var(--green);
-    }
-
-    .signup {
-      background: white;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .signup form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 400px;
-      margin: auto;
-    }
-
-    .signup input[type="email"] {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    .signup input:focus {
-      border-color: var(--blue);
-      outline: none;
-    }
-
-    .signup .form-message {
-      margin-top: 10px;
-      font-size: 14px;
-      color: var(--green);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #fff;
-      padding-top: 20px;
-    }
-
-     .screenshots {
-      background: var(--light-green);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-      padding: 60px 20px;
-      max-width: 960px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .screenshots h2 {
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 20px;
-    }
-
-    .screenshot-gallery {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding-bottom: 10px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
-    }
-
-    .screenshot-gallery img {
-      flex: 0 0 auto;
-      width: 200px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      scroll-snap-align: start;
-    }
-
-    .screenshot-gallery::-webkit-scrollbar {
-      display: none;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .about-box {
-      text-align: center;
-    }
-
-    .about-box img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Hub - 採用とキャリアの新しいカタチ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+        .gradient-text-main {
+            background: linear-gradient(135deg, #38bdf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-corp {
+            background: linear-gradient(135deg, #60a5fa, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-eng {
+            background: linear-gradient(135deg, #4ade80, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-btn {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .page {
+            display: none; /* Initially hide all pages */
+        }
+        .page.active {
+            display: block; /* Show only the active page */
+        }
+    </style>
 </head>
-<body>
-  <div class="blob blob1"></div>
-  <div class="blob blob2"></div>
-  <div class="blob blob3"></div>
+<body class="bg-gray-900 text-gray-200">
 
-  <nav>
-    <div class="logo-container">
-      <img src="https://via.placeholder.com/32x32.png?text=S" alt="SkillHubbロゴ" class="logo-img" />
-      <span class="logo-text">SkillHubb</span>
-    </div>
-  </nav>
+    <!-- Page Container -->
+    <div id="app">
 
-  <header class="hero">
-    <h1>エンジニア採用、もっとスマートに。</h1>
-    <p>SkillHubbは、スワイプ式で最適なエンジニアとつながる採用マッチングアプリ。人材探索を、もっと直感的に。</p>
-    <a href="#signup" class="btn">無料で企業登録</a>
-  </header>
+        <!-- =================================================================== -->
+        <!-- 1. 全ターゲット向けLP (総合トップページ)                            -->
+        <!-- =================================================================== -->
+        <div id="page-main" class="page active">
+            <header class="bg-gray-900/80 backdrop-blur-sm shadow-lg shadow-black/20 sticky top-0 z-50">
+                <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <div class="text-2xl font-black gradient-text-main">Skill Hub</div>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#" onclick="showPage('page-corporate'); return false;" class="text-gray-300 hover:text-blue-400 font-semibold">企業の方へ</a>
+                        <a href="#" onclick="showPage('page-engineer'); return false;" class="text-gray-300 hover:text-green-400 font-semibold">エンジニアの方へ</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="bg-gray-900">
+                <section style="background: linear-gradient(135deg, #020617 0%, #111827 100%);" class="py-20 md:py-32">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                            採用に、革命を。<br>キャリアに、自由を。
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                            Skill Hubは、採用とキャリアの「不透明性」を破壊する、<br class="hidden md:block">次世代のマッチングプラットフォームです。
+                        </p>
+                        <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                            <a href="#" onclick="showPage('page-corporate'); return false;" class="cta-btn bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full w-full md:w-auto text-lg shadow-lg">
+                                企業様向け先行登録
+                            </a>
+                            <a href="#" onclick="showPage('page-engineer'); return false;" class="cta-btn bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-10 rounded-full w-full md:w-auto text-lg shadow-lg">
+                                エンジニア向け先行登録
+                            </a>
+                        </div>
+                         <p class="text-sm text-gray-400 mt-6">現在、先行登録を受付中。未来の働き方を、誰よりも早く。</p>
+                    </div>
+                </section>
+                <section class="py-20 bg-gray-800">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-12">
+                             <h2 class="text-3xl font-bold mb-4 text-white">めくる、出会う、心躍る。</h2>
+                             <p class="text-gray-400 max-w-2xl mx-auto">もう、大量の書類とにらめっこする必要はありません。<br>カードをめくるような直感的な体験が、最高の出会いを加速させます。</p>
+                        </div>
+                        <div class="relative flex justify-center items-center">
+                            <!-- ### UI Image Updated ### -->
+                            <img src='data:image/svg+xml;charset=utf-8,%3Csvg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="800" height="600" rx="16" fill="%23111827"/%3E%3Crect x="150" y="100" width="500" height="400" rx="24" fill="%231F2937" stroke="%23374151" stroke-width="2"/%3E%3Crect x="180" y="130" width="440" height="180" rx="12" fill="%23374151"/%3E%3Ctext x="200" y="200" font-family="Inter, Noto Sans JP, sans-serif" font-size="28" font-weight="bold" fill="white"%3Eサーバーサイド開発 (Go)%3C/text%3E%3Crect x="200" y="240" width="250" height="40" rx="20" fill="%23059669"/%3E%3Ctext x="220" y="268" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="bold" fill="white"%3E月額単価: ¥850,000%3C/text%3E%3Crect x="200" y="330" width="70" height="30" rx="15" fill="%234B5563"/%3E%3Ctext x="220" y="351" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="white"%3EGo%3C/text%3E%3Crect x="285" y="330" width="80" height="30" rx="15" fill="%234B5563"/%3E%3Ctext x="300" y="351" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="white"%3EAWS%3C/text%3E%3Crect x="380" y="330" width="100" height="30" rx="15" fill="%234B5563"/%3E%3Ctext x="395" y="351" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="white"%3EDocker%3C/text%3E%3Ccircle cx="325" cy="450" r="40" fill="%23EF4444"/%3E%3Cpath d="M313 438L337 462M337 438L313 462" stroke="white" stroke-width="4" stroke-linecap="round"/%3E%3Ccircle cx="475" cy="450" r="40" fill="%2322C55E"/%3E%3Cpath d="M460 450L470 460L490 440" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E' alt="Skill HubのスワイプUIイメージ" class="rounded-2xl shadow-2xl z-10 w-full max-w-3xl">
+                        </div>
+                    </div>
+                </section>
+                <section style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%);" class="py-20">
+                    <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div class="bg-gray-800/70 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+                                <h3 class="text-2xl font-bold mb-4 text-blue-400">採用担当者様へ</h3>
+                                <p class="text-lg font-semibold mb-6 text-white">採用を「運」から「科学」へ。<br>事業をドライブする核心人材と出会う。</p>
+                                <p class="text-gray-300 mb-6">無駄な工数を90%削減し、データに基づいた戦略的な採用を実現。もう、営業メールに時間を奪われることはありません。</p>
+                                <a href="#" onclick="showPage('page-corporate'); return false;" class="inline-block text-blue-400 font-bold hover:underline">企業様向けページで詳細を見る →</a>
+                            </div>
+                            <div class="bg-gray-800/70 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+                                <h3 class="text-2xl font-bold mb-4 text-green-400">エンジニアの皆様へ</h3>
+                                <p class="text-lg font-semibold mb-6 text-white">あなたの市場価値、<br>“誰か”に決めさせていいんですか？</p>
+                                <p class="text-gray-300 mb-6">不透明な評価制度から抜け出し、自らの価値で未来を選び取る自由を。キャリアのハンドルを、その手に取り戻しましょう。</p>
+                                <a href="#" onclick="showPage('page-engineer'); return false;" class="inline-block text-green-400 font-bold hover:underline">エンジニア向けページで詳細を見る →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="pre-register-main" class="py-20 bg-gray-900">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-white mb-4">未来のマッチングを、誰よりも早く。</h2>
+                        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">今すぐ先行登録して、ローンチの最新情報や限定特典をいち早く手に入れましょう。</p>
+                        <div class="bg-white p-8 md:p-12 rounded-lg max-w-2xl mx-auto shadow-2xl">
+                            <form>
+                                <div class="mb-6">
+                                     <label for="email-main" class="block text-gray-700 text-sm font-bold mb-2 text-left">メールアドレス</label>
+                                     <input type="email" id="email-main" placeholder="email@example.com" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2 text-left">登録種別</label>
+                                    <select class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                        <option>人材を探したい企業</option>
+                                        <option>案件を探したいエンジニア</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-10 rounded-full text-lg shadow-lg cta-btn" style="background: linear-gradient(135deg, #2563eb, #10b981);">
+                                    先行登録する（無料）
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
 
-  <section class="features">
-    <div class="feature-box">
-      <h3>スワイプでスクリーニング</h3>
-      <p>気になるエンジニアだけをスワイプでピック。時間をかけずに候補を選べます。</p>
-    </div>
-    <div class="feature-box">
-      <h3>スキル・稼働条件でフィルタ</h3>
-      <p>技術スタック、働き方（リモート / 常駐）、稼働時間などの条件に合う人材を即マッチ。</p>
-    </div>
-    <div class="feature-box">
-      <h3>マッチ後すぐにチャット可能</h3>
-      <p>お互いにマッチすれば、即チャットで連絡。選考プロセスを高速化します。</p>
-    </div>
-  </section>
+        <!-- =================================================================== -->
+        <!-- 2. 企業様向けLP                                                    -->
+        <!-- =================================================================== -->
+        <div id="page-corporate" class="page">
+            <header class="bg-gray-900/80 backdrop-blur-sm shadow-lg shadow-black/20 sticky top-0 z-50">
+                <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <a href="#" onclick="showPage('page-main'); return false;" class="text-2xl font-black gradient-text-corp">Skill Hub</a>
+                    <a href="#" onclick="showPage('page-engineer'); return false;" class="text-gray-300 hover:text-green-400 font-semibold">エンジニアの方はこちら</a>
+                </div>
+            </header>
+            <main style="background: #0c1439;" class="text-white">
+                <section style="background: linear-gradient(135deg, #0c1439 0%, #1e3a8a 100%);" class="py-20 md:py-28">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">
+                            "良い人"は、待っていても来ない。
+                        </h1>
+                        <p class="text-lg md:text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+                           採用工数という名の「見えないコスト」が、事業の成長を蝕んでいます。<br> Skill Hubで、採用を「運」から「科学」へ。
+                        </p>
+                        <a href="#pre-register-corp" class="cta-btn bg-white text-blue-700 font-bold py-4 px-12 rounded-full w-full md:w-auto text-xl shadow-lg">
+                            無料で先行登録する
+                        </a>
+                    </div>
+                </section>
+                <section class="py-20" style="background: #1e3a8a;">
+                    <div class="container mx-auto px-6">
+                        <h2 class="text-3xl font-bold text-center mb-12">その"時間"、本当に価値を生んでいますか？</h2>
+                        <div class="max-w-3xl mx-auto space-y-6">
+                            <div class="bg-red-500/80 backdrop-blur-sm p-6 rounded-lg border border-red-400">
+                                <p class="text-lg text-white font-semibold">何十通ものスキルシート、本当にすべてに目を通せていますか？</p>
+                            </div>
+                            <div class="bg-red-500/80 backdrop-blur-sm p-6 rounded-lg border border-red-400">
+                                <p class="text-lg text-white font-semibold">面接で初めてわかるスキルミスマッチ、もう終わりにしませんか？</p>
+                            </div>
+                            <div class="bg-red-500/80 backdrop-blur-sm p-6 rounded-lg border border-red-400">
+                                <p class="text-lg text-white font-semibold">他社が最高の才能を確保する間、あなたはまだ営業メールを読んでいますか？</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20" style="background: #172554;">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-12">
+                             <h2 class="text-3xl font-bold mb-4">採用を、<span class="gradient-text-corp drop-shadow-lg">事業成長のエンジン</span>へ。</h2>
+                             <p class="text-blue-200 max-w-2xl mx-auto">Skill Hubは、貴社の採用活動をコストセンターからプロフィットセンターへと変革します。</p>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-blue-900/50 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center">
+                                <h3 class="text-xl font-bold mb-2">1. ダイレクト・アクセス</h3>
+                                <p class="text-blue-100">巨大なタレントプールに直接アクセス。仲介業者を挟まず、本当に会いたい人材と最速で繋がります。</p>
+                            </div>
+                            <div class="bg-blue-900/50 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center">
+                                <h3 class="text-xl font-bold mb-2">2. データドリブン採用</h3>
+                                <p class="text-blue-100">AIが候補者のスキルをスコアリング。会うべき人が一目でわかり、面接の質が劇的に向上します。</p>
+                            </div>
+                            <div class="bg-blue-900/50 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center">
+                                <h3 class="text-xl font-bold mb-2">3. コストの最適化</h3>
+                                <p class="text-blue-100">透明化された市場価格に基づき、採用コストを最適化。無駄な支出をなくし、投資対効果を最大化します。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20" style="background: #1e3a8a;">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-12">
+                             <h2 class="text-3xl font-bold mb-4">これが、新しい採用の司令塔。</h2>
+                        </div>
+                        <!-- ### UI Image Updated ### -->
+                        <img src='data:image/svg+xml;charset=utf-8,%3Csvg width="1024" height="600" viewBox="0 0 1024 600" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="1024" height="600" rx="16" fill="%231e3a8a"/%3E%3Crect x="20" y="20" width="220" height="560" rx="12" fill="%23172554"/%3E%3Ctext x="40" y="60" font-family="Inter, Noto Sans JP, sans-serif" font-size="24" font-weight="bold" fill="white"%3ESkill Hub%3C/text%3E%3Crect x="40" y="100" width="180" height="40" rx="8" fill="%233b82f6"/%3E%3Ctext x="60" y="128" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="white"%3Eダッシュボード%3C/text%3E%3Ctext x="60" y="178" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="%239ca3af"%3E候補者を探す%3C/text%3E%3Ctext x="60" y="228" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="%239ca3af"%3Eメッセージ%3C/text%3E%3Ctext x="40" y="550" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="%239ca3af"%3E設定%3C/text%3E%3Crect x="260" y="20" width="744" height="560" rx="12" fill="%23172554"/%3E%3Ctext x="280" y="60" font-family="Inter, Noto Sans JP, sans-serif" font-size="28" font-weight="bold" fill="white"%3E候補者一覧%3C/text%3E%3Crect x="280" y="100" width="704" height="80" rx="8" fill="%231e3a8a"/%3E%3Ccircle cx="320" cy="140" r="24" fill="%2360a5fa"/%3E%3Ctext x="360" y="135" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="bold" fill="white"%3E田中 圭%3C/text%3E%3Ctext x="360" y="160" font-family="Inter, Noto Sans JP, sans-serif" font-size="14" fill="%239ca3af"%3EGo, AWS, Kubernetes%3C/text%3E%3Crect x="800" y="120" width="160" height="40" rx="20" fill="%233b82f6"/%3E%3Ctext x="820" y="145" font-family="Inter, Noto Sans JP, sans-serif" font-size="14" fill="white"%3Eメッセージを送る%3C/text%3E%3Crect x="280" y="190" width="704" height="80" rx="8" fill="%231e3a8a"/%3E%3Ccircle cx="320" cy="230" r="24" fill="%2360a5fa"/%3E%3Ctext x="360" y="225" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="bold" fill="white"%3E鈴木 奈々%3C/text%3E%3Ctext x="360" y="250" font-family="Inter, Noto Sans JP, sans-serif" font-size="14" fill="%239ca3af"%3EReact, TypeScript, Figma%3C/text%3E%3Crect x="800" y="210" width="160" height="40" rx="20" fill="%233b82f6"/%3E%3Ctext x="820" y="235" font-family="Inter, Noto Sans JP, sans-serif" font-size="14" fill="white"%3Eメッセージを送る%3C/text%3E%3Crect x="280" y="280" width="704" height="80" rx="8" fill="%231e3a8a"/%3E%3Ccircle cx="320" cy="320" r="24" fill="%2360a5fa"/%3E%3Ctext x="360" y="315" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="bold" fill="white"%3E佐藤 健太%3C/text%3E%3Ctext x="360" y="340" font-family="Inter, Noto Sans JP, sans-serif" font-size="14" fill="%239ca3af"%3EPython, Django, GCP%3C/text%3E%3Crect x="800" y="300" width="160" height="40" rx="20" fill="%239ca3af"/%3E%3Ctext x="830" y="325" font-family="Inter, Noto Sans JP, sans-serif" font-size="14" fill="white"%3E返信待ち%3C/text%3E%3C/svg%3E' alt="Skill Hubの企業向けUIイメージ" class="rounded-2xl shadow-2xl z-10 w-full max-w-5xl mx-auto">
+                    </div>
+                </section>
+                <section id="pre-register-corp" class="py-20 bg-blue-950">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-white mb-4">競合が気づく前に、未来の採用を。</h2>
+                        <p class="text-blue-200 mb-8 max-w-2xl mx-auto">今すぐ先行登録し、採用活動の未来を誰よりも早く体験してください。限定特典もご用意しています。</p>
+                        <div class="bg-white p-8 md:p-12 rounded-lg max-w-xl mx-auto shadow-2xl">
+                            <form>
+                                <div class="mb-6">
+                                     <label for="corp-email" class="block text-gray-700 text-sm font-bold mb-2 text-left">会社のメールアドレス</label>
+                                     <input type="email" id="corp-email" placeholder="your.name@company.com" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-10 rounded-full text-lg shadow-lg cta-btn">
+                                    先行登録する（無料）
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
 
-  <section class="screenshots">
-    <h2>採用担当者向け画面</h2>
-    <div class="screenshot-gallery">
-      <img src="https://via.placeholder.com/200x400?text=Candidate+Swipe" alt="候補者スワイプ画面">
-      <img src="https://via.placeholder.com/200x400?text=Skill+Match" alt="スキルマッチ表示">
-      <img src="https://via.placeholder.com/200x400?text=Chat+Interface" alt="チャット機能">
-    </div>
-  </section>
+        <!-- =================================================================== -->
+        <!-- 3. エンジニア様向けLP                                                -->
+        <!-- =================================================================== -->
+        <div id="page-engineer" class="page">
+            <header class="bg-gray-900/80 backdrop-blur-sm shadow-lg shadow-black/20 sticky top-0 z-50">
+                <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <a href="#" onclick="showPage('page-main'); return false;" class="text-2xl font-black gradient-text-eng">Skill Hub</a>
+                    <a href="#" onclick="showPage('page-corporate'); return false;" class="text-gray-300 hover:text-blue-400 font-semibold">企業の方はこちら</a>
+                </div>
+            </header>
+            <main style="background: linear-gradient(180deg, #064e3b 0%, #062f23 100%);" class="text-white">
+                <section style="background: linear-gradient(135deg, #047857 0%, #064e3b 100%);" class="py-20 md:py-28">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">
+                           あなたの市場価値、<br>“誰か”に決めさせていいんですか？
+                        </h1>
+                        <p class="text-lg md:text-xl text-green-100 mb-8 max-w-3xl mx-auto">
+                            そのスキルは、もっと評価されるべき。<br>キャリアのハンドルを、自分の手に取り戻そう。
+                        </p>
+                        <a href="#pre-register-eng" class="cta-btn bg-white text-green-600 font-bold py-4 px-12 rounded-full w-full md:w-auto text-xl shadow-lg">
+                            無料で先行登録する
+                        </a>
+                        <p class="text-sm text-green-200 mt-4">登録・利用は一切無料。今の会社に知られることはありません。</p>
+                    </div>
+                </section>
+                <section class="py-20">
+                    <div class="container mx-auto px-6">
+                        <h2 class="text-3xl font-bold text-center mb-12">その「仕方ない」は、もういらない。</h2>
+                        <div class="max-w-3xl mx-auto space-y-6">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-gray-200/20">
+                                <p class="text-lg text-white font-semibold">「自分の単価も知らずに働くのが、この業界の常識だから…」</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-gray-200/20">
+                                <p class="text-lg text-white font-semibold">「面白い仕事は、どうせ一部の人にしか回ってこない…」</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-gray-200/20">
+                                <p class="text-lg text-white font-semibold">「今の年収が、自分の実力なんだろうな…」</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-12">
+                             <h2 class="text-3xl font-bold mb-4">キャリアの<span class="gradient-text-eng">主導権</span>を、<br>あなたの手に。</h2>
+                             <p class="text-green-200 max-w-2xl mx-auto">Skill Hubは、あなたを縛るすべての不透明性から解放します。</p>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white/5 backdrop-blur-sm p-8 rounded-lg text-center">
+                                <h3 class="text-xl font-bold mb-2 text-green-300">1. 価値の再発見</h3>
+                                <p class="text-green-100">あなたのスキルセットから、市場価値をリアルタイムに算出。眠っていた本当の価値が、今、明らかになります。</p>
+                            </div>
+                            <div class="bg-white/5 backdrop-blur-sm p-8 rounded-lg text-center">
+                                <h3 class="text-xl font-bold mb-2 text-green-300">2. オファーが舞い込む体験</h3>
+                                <p class="text-green-100">「気になる」を送るだけ。企業からの熱烈なオファーが、あなたの元に直接届きます。もう、選ばれるのを待つだけじゃない。</p>
+                            </div>
+                            <div class="bg-white/5 backdrop-blur-sm p-8 rounded-lg text-center">
+                                <h3 class="text-xl font-bold mb-2 text-green-300">3. 自由なキャリア設計</h3>
+                                <p class="text-green-100">モダンな技術、挑戦的なプロジェクト。本当にやりたい仕事を、あなたが選ぶ。キャリアは、会社のものではなく、あなたのものです。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="py-20">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-12">
+                             <h2 class="text-3xl font-bold mb-4">新しい出会いが、あなたを待っている。</h2>
+                        </div>
+                        <!-- ### UI Image Updated ### -->
+                        <img src='data:image/svg+xml;charset=utf-8,%3Csvg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="800" height="600" rx="16" fill="%23064e3b"/%3E%3Crect x="150" y="100" width="500" height="400" rx="24" fill="%23065f46" stroke="%23059669" stroke-width="2"/%3E%3Crect x="180" y="130" width="440" height="180" rx="12" fill="%2310b981"/%3E%3Ctext x="200" y="200" font-family="Inter, Noto Sans JP, sans-serif" font-size="28" font-weight="bold" fill="white"%3Eサーバーサイド開発 (Go)%3C/text%3E%3Crect x="200" y="240" width="250" height="40" rx="20" fill="%23ecfdf5"/%3E%3Ctext x="220" y="268" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="bold" fill="%23065f46"%3E月額単価: ¥850,000%3C/text%3E%3Crect x="200" y="330" width="70" height="30" rx="15" fill="%2334d399"/%3E%3Ctext x="220" y="351" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="%23064e3b"%3EGo%3C/text%3E%3Crect x="285" y="330" width="80" height="30" rx="15" fill="%2334d399"/%3E%3Ctext x="300" y="351" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="%23064e3b"%3EAWS%3C/text%3E%3Crect x="380" y="330" width="100" height="30" rx="15" fill="%2334d399"/%3E%3Ctext x="395" y="351" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" fill="%23064e3b"%3EDocker%3C/text%3E%3Ccircle cx="325" cy="450" r="40" fill="%23EF4444"/%3E%3Cpath d="M313 438L337 462M337 438L313 462" stroke="white" stroke-width="4" stroke-linecap="round"/%3E%3Ccircle cx="475" cy="450" r="40" fill="%2322C55E"/%3E%3Cpath d="M460 450L470 460L490 440" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E' alt="Skill Hubのエンジニア向けUIイメージ" class="rounded-2xl shadow-2xl z-10 w-full max-w-3xl mx-auto">
+                    </div>
+                </section>
+                <section id="pre-register-eng" class="py-20 bg-gray-800">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-white mb-4">失うものは何もない。<br>あるのは、新しい可能性だけ。</h2>
+                        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">あなたのスキルは、あなたが思うよりもずっと価値がある。まずはその価値を知ることから始めませんか？</p>
+                        <div class="bg-white p-8 md:p-12 rounded-lg max-w-xl mx-auto shadow-2xl">
+                            <form>
+                                <div class="mb-6">
+                                     <label for="eng-email" class="block text-gray-700 text-sm font-bold mb-2 text-left">メールアドレス</label>
+                                     <input type="email" id="eng-email" placeholder="email@example.com" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                </div>
+                                <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 px-10 rounded-full text-lg shadow-lg cta-btn">
+                                    先行登録する（無料）
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
 
-  <s
+    </div>
+
+    <script>
+        // Simple page switching logic
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show the target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0); // Scroll to top on page change
+            }
+        }
+
+        // Handle anchor links within the same page
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // If it's not a page switch link, handle smooth scroll
+                if (href.length > 1 && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-black text-2xl mb-4 gradient-text-main">Skill Hub</p>
+            <p class="text-gray-400 text-sm">&copy; 2025 Skill Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
